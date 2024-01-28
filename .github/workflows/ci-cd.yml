@@ -15,12 +15,7 @@ jobs:
 
     - name: Build Docker image
       run: docker build -t sajedul5/nginx-container:latest .
-
-  deploy:
-    runs-on: ubuntu-latest
-
-    needs: build
-
-    steps:
     - name: Run Docker container
       run: docker run -d -p 80:80 --network host sajedul5/nginx-container:latest
+
+  
